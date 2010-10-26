@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- Manual page created with latex2man on Thu Oct 11 15:40:11 PDT 2001 --
+-- Author of latex2man: Juergen.Vollmer@acm.org --
+-- NOTE: This file is generated, DO NOT EDIT. -->
+<html>
+<head><title>FCC</title></head>
+<body bgcolor="white">
+<h1 align=center>
+fcc -<br>
+ Fast Class Generator 
+</h1>
+<h4 align=center>Elf M. Sternberg </h4>
+<h4 align=center>11 October 2001</h4>
+<h4 align=center>Version 0.8a</h4>
+<p>
+<tt>fcc</tt>
+is a tool to rapidly generate the basic framework of C++ 
+class and components. <tt>fcc</tt>
+can generate inline files, testing 
+components, and basic copyright notices. 
+<p>
+<h3>Table of Contents</h3>
+<ul>
+<li><a href="#section_1">Synopsis </a></li>
+<li><a href="#section_2">Description </a></li>
+<li><a href="#section_3">Options </a></li>
+<li><a href="#section_4">Requirements </a></li>
+<li><a href="#section_5">Version </a></li>
+<li><a href="#section_6">License and Copyright </a></li>
+<li><a href="#section_7">Author </a>
+</li></ul>
+<p>
+<h2><a name="section_1">Synopsis</a></h2>
+
+<p>
+<tt>fcc</tt>
+<b>-class </b><i>list of class names</i>
+<b>-author </b><i>author's name</i>
+[<b>-namespace </b><i>namespace_name</i>]
+[<b>-overwrite</b>]
+[<b>-verbose</b>]
+[<b>-no_unit_test</b>]
+[<b>-no_makefile</b>]
+[<b>-project </b><i>project_name</i>]
+[<b>-sccs_keywords</b>]
+[<b>-continuus_keywords</b>]
+[<b>-open_source_notice</b>]
+[<b>-copyright </b>[<i>copyright</i>]]
+[<b>-base_filename </b><i>base_filename</i>]
+[<b>-no_copy_ctor</b>]
+[<b>-no_assignment_operator</b>]
+[<b>-no_ctor</b>]
+[<b>-no_dtor</b>]
+[<b>-public_copy_ctor</b>]
+[<b>-public_assignment_operator</b>]
+[<b>-no_dump_diagnostics</b>]
+[<b>-no_check_valid</b>]
+[<b>-no_icc</b>]
+[<b>-settings_file </b><i>filename</i>]
+<p>
+<h2><a name="section_2">Description</a></h2>
+
+<tt>fcc</tt>
+takes the name of one or more classes and generates the 
+appropriate code and header files for those classes. By default, it 
+includes a constructor, destructor, private copy constructor, private 
+assignment operator, unit testing, and appropriate inlines. It also 
+generates a raw BSD-style makefile. 
+<p>
+<h2><a name="section_3">Options</a></h2>
+
+<dl compact>
+<dt><b>-class </b><i>list of class names</i>
+<dd> Names of classes to be 
+generated. The files will be named after the first class name on the 
+list. Class names must be separated by whitespace. 
+<p>
+</dd>
+<dt><b>-author </b><i>author's name</i>
+<dd> Your name here. 
+<p>
+</dd>
+<dt><b>-namespace </b><i>namespace name</i>
+<dd> Wrap the output in a 
+specified namespace. 
+<p>
+</dd>
+<dt><b>-verbose</b>
+<dd> Explain in excruciating detail what the program 
+is doing. 
+<p>
+</dd>
+<dt><b>-no_unit_test</b>
+<dd> Do not generate unit-testing definitions in 
+the source files. This is an empty method; it's up to the user to 
+define appropriate tests. 
+<p>
+</dd>
+<dt><b>-no_makefile</b>
+<dd> Do not generate a makefile for this code. 
+<p>
+</dd>
+<dt><b>-project </b><i>project_name</i>
+<dd> Define a project for this makefile. Right now 
+this option does nothing. 
+<p>
+</dd>
+<dt><b>-sccs_keywords</b>
+<dd> Generate IDs appropriate to SCCS. 
+<p>
+</dd>
+<dt><b>-continuus_keywords</b>
+<dd> Generate keywords for the Continuus 
+Version System. 
+<p>
+</dd>
+<dt><b>-open_source_notice</b>
+<dd> Add some comments about how this code 
+is open source and permission to copy in granted yadda yadda... 
+<p>
+</dd>
+<dt><b>-copyright </b>[<i>copyright</i>]
+<dd> Adds your copyright notice to the 
+code. 
+<p>
+</dd>
+<dt><b>-base_filename </b><i>base_filename</i>
+<dd> Set the name of the 
+files output. Defaults to first class name listed if not set. 
+<p>
+</dd>
+<dt><b>-no_copy_ctor</b>
+<dd> Do not provide a copy constructor in the 
+output code. 
+<p>
+</dd>
+<dt><b>-no_assignment_operator</b>
+<dd> Do not provide an assignment 
+operator in the output code. 
+<p>
+</dd>
+<dt><b>-no_ctor</b>
+<dd> Do not provide a default constructor in the 
+output code. 
+<p>
+</dd>
+<dt><b>-no_dtor</b>
+<dd> Do not provide a destructor in the output code. 
+<p>
+</dd>
+<dt><b>-public_copy_ctor</b>
+<dd> Put the copy constructor in the public 
+section instead of the private section. 
+<p>
+</dd>
+<dt><b>-public_assignment_operator</b>
+<dd> Put the assignment operator in 
+the public section instead of the private section. 
+<p>
+</dd>
+<dt><b>-no_dump_diagnostics</b>
+<dd> Do not provide a debugging method. 
+<p>
+</dd>
+<dt><b>-no_check_valid</b>
+<dd> Do not provide a Programming By Contract 
+style method to check for invariants. 
+<p>
+</dd>
+<dt><b>-no_icc</b>
+<dd> Do not provide a file for class inlines. 
+<p>
+</dd>
+<dt><b>-settings_file </b><i>filename</i>
+<dd> Get options from a settings 
+file. Right now this option does nothing. 
+<p>
+<h2><a name="section_4">Requirements</a></h2>
+
+<p>
+<dl compact>
+<dt>Python
+<dd> <tt>fcc</tt>
+requires Python version &gt;= 2.0 
+</dd>
+</dl>
+<p>
+<h2><a name="section_5">Version</a></h2>
+
+Version: 0.8a of May 5, 2001 
+<p>
+<h2><a name="section_6">License and Copyright</a></h2>
+
+<p>
+<dl compact>
+<dt>Copyright
+<dd> &copy; 2001, Elf M. Sternberg <br>
+ 
+<a href ="mailto:elf@drizzle.com"><tt>elf@drizzle.com</tt></a>
+<br> 
+<a href ="http://www.drizzle.com/&nbsp;elf"><tt>http://www.drizzle.com/&nbsp;elf</tt></a>
+<p>
+</dd>
+<dt>License
+<dd> This program can be redistributed and/or modified under the 
+terms of the GNU Public License. See the file COPYING or visit 
+<a href ="http://www.gnu.org/copyleft/gpl.html"><tt>http://www.gnu.org/copyleft/gpl.html</tt></a>
+for terms of use and 
+distribution. 
+<p>
+</dd>
+<dt>Misc
+<dd> If you find this software useful, please drop me some email 
+<p>
+</dd>
+<dt>Misc
+<dd> This man page was generated using latex2man by Dr. Jurgen 
+Vollmer, and is available from the CTAN archives. 
+</dd>
+</dl>
+<p>
+<h2><a name="section_7">Author</a></h2>
+
+<p>
+Elf M. Sternberg <br>
+ 
+Email: <a href ="mailto:elf@drizzle.com"><tt>elf@drizzle.com</tt></a>
+<br> 
+WWW: <a href ="http://www.drizzle.com/&nbsp;elf"><tt>http://www.drizzle.com/&nbsp;elf</tt></a>.
+</body>
+</html>
+<!-- NOTE: This file is generated, DO NOT EDIT. -->

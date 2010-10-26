@@ -1,0 +1,264 @@
+
+
+
+FCC(1)                                                     FCC(1)
+
+
+NNAAMMEE
+       fcc  is  a tool to rapidly generate the basic framework of
+       C++ class and components. fcc can generate  inline  files,
+       testing components, and basic copyright notices.
+
+
+SSYYNNOOPPSSIISS
+       fcc  --ccllaassss  _l_i_s_t  _o_f  _c_l_a_s_s  _n_a_m_e_s  --aauutthhoorr _a_u_t_h_o_r_'_s _n_a_m_e
+       [--nnaammeessppaaccee   _n_a_m_e_s_p_a_c_e___n_a_m_e]   [--oovveerrwwrriittee]    [--vveerrbboossee]
+       [--nnoo__uunniitt__tteesstt]   [--nnoo__mmaakkeeffiillee]  [--pprroojjeecctt  _p_r_o_j_e_c_t___n_a_m_e]
+       [--ssccccss__kkeeyywwoorrddss]                     [--ccoonnttiinnuuuuss__kkeeyywwoorrddss]
+       [--ooppeenn__ssoouurrccee__nnoottiiccee]       [--ccooppyyrriigghhtt       [_c_o_p_y_r_i_g_h_t]]
+       [--bbaassee__ffiilleennaammee       _b_a_s_e___f_i_l_e_n_a_m_e]       [--nnoo__ccooppyy__ccttoorr]
+       [--nnoo__aassssiiggnnmmeenntt__ooppeerraattoorr]   [--nnoo__ccttoorr]  [--nnoo__ddttoorr]  [--ppuubb--
+       lliicc__ccooppyy__ccttoorr]               [--ppuubblliicc__aassssiiggnnmmeenntt__ooppeerraattoorr]
+       [--nnoo__dduummpp__ddiiaaggnnoossttiiccss]  [--nnoo__cchheecckk__vvaalliidd] [--nnoo__iicccc] [--sseett--
+       ttiinnggss__ffiillee _f_i_l_e_n_a_m_e]
+
+
+DDEESSCCRRIIPPTTIIOONN
+       fcc takes the name of one or more  classes  and  generates
+       the  appropriate  code and header files for those classes.
+       By default, it includes a constructor, destructor, private
+       copy  constructor, private assignment operator, unit test-
+       ing, and appropriate inlines.  It  also  generates  a  raw
+       BSD-style makefile.
+
+
+OOPPTTIIOONNSS
+       --ccllaassss _l_i_s_t _o_f _c_l_a_s_s _n_a_m_e_s
+               Names  of  classes to be generated. The files will
+              be named after the first class name  on  the  list.
+              Class names must be separated by whitespace.
+
+
+       --aauutthhoorr _a_u_t_h_o_r_'_s _n_a_m_e
+               Your name here.
+
+
+       --nnaammeessppaaccee _n_a_m_e_s_p_a_c_e _n_a_m_e
+               Wrap the output in a specified namespace.
+
+
+       --vveerrbboossee
+               Explain in excruciating detail what the program is
+              doing.
+
+
+       --nnoo__uunniitt__tteesstt
+               Do not generate unit-testing  definitions  in  the
+              source  files.  This is an empty method; it's up to
+              the user to define appropriate tests.
+
+
+
+
+
+C++ Development Tools    11 October 2001                        1
+
+
+
+
+
+FCC(1)                                                     FCC(1)
+
+
+       --nnoo__mmaakkeeffiillee
+               Do not generate a makefile for this code.
+
+
+       --pprroojjeecctt _p_r_o_j_e_c_t___n_a_m_e
+               Define a project for this makefile. Right now this
+              option does nothing.
+
+
+       --ssccccss__kkeeyywwoorrddss
+               Generate IDs appropriate to SCCS.
+
+
+       --ccoonnttiinnuuuuss__kkeeyywwoorrddss
+               Generate  keywords  for the Continuus Version Sys-
+              tem.
+
+
+       --ooppeenn__ssoouurrccee__nnoottiiccee
+               Add some comments about  how  this  code  is  open
+              source  and  permission  to  copy  in granted yadda
+              yadda...
+
+
+       --ccooppyyrriigghhtt [_c_o_p_y_r_i_g_h_t]
+               Adds your copyright notice to the code.
+
+
+       --bbaassee__ffiilleennaammee _b_a_s_e___f_i_l_e_n_a_m_e
+               Set the name of  the  files  output.  Defaults  to
+              first class name listed if not set.
+
+
+       --nnoo__ccooppyy__ccttoorr
+               Do  not  provide  a copy constructor in the output
+              code.
+
+
+       --nnoo__aassssiiggnnmmeenntt__ooppeerraattoorr
+               Do not provide an assignment operator in the  out-
+              put code.
+
+
+       --nnoo__ccttoorr
+               Do not provide a default constructor in the output
+              code.
+
+
+       --nnoo__ddttoorr
+               Do not provide a destructor in the output code.
+
+
+       --ppuubblliicc__ccooppyy__ccttoorr
+               Put the copy constructor  in  the  public  section
+
+
+
+C++ Development Tools    11 October 2001                        2
+
+
+
+
+
+FCC(1)                                                     FCC(1)
+
+
+              instead of the private section.
+
+
+       --ppuubblliicc__aassssiiggnnmmeenntt__ooppeerraattoorr
+               Put  the assignment operator in the public section
+              instead of the private section.
+
+
+       --nnoo__dduummpp__ddiiaaggnnoossttiiccss
+               Do not provide a debugging method.
+
+
+       --nnoo__cchheecckk__vvaalliidd
+               Do not provide a  Programming  By  Contract  style
+              method to check for invariants.
+
+
+       --nnoo__iicccc
+               Do not provide a file for class inlines.
+
+
+       --sseettttiinnggss__ffiillee _f_i_l_e_n_a_m_e
+               Get  options  from a settings file. Right now this
+              option does nothing.
+
+
+RREEQQUUIIRREEMMEENNTTSS
+              Python fcc requires Python version >= 2.0
+
+
+VVEERRSSIIOONN
+       Version: 0.8a of May 5, 2001
+
+
+LLIICCEENNSSEE AANNDD CCOOPPYYRRIIGGHHTT
+       Copyright
+              (C)2001, Elf M. Sternberg
+              eellff@@ddrriizzzzllee..ccoomm
+              hhttttpp::////wwwwww..ddrriizzzzllee..ccoomm// eellff
+
+
+       License
+              This program can be redistributed  and/or  modified
+              under  the terms of the GNU Public License. See the
+              file  COPYING  or  visit   hhttttpp::////wwwwww..ggnnuu..oorrgg//ccooppyy--
+              lleefftt//ggppll..hhttmmll for terms of use and distribution.
+
+
+       Misc   If  you  find  this software useful, please drop me
+              some email
+
+
+       Misc   This man page was generated using latex2man by  Dr.
+              Jurgen  Vollmer,  and  is  available  from the CTAN
+
+
+
+C++ Development Tools    11 October 2001                        3
+
+
+
+
+
+FCC(1)                                                     FCC(1)
+
+
+              archives.
+
+
+AAUUTTHHOORR
+       Elf M. Sternberg
+       Email: eellff@@ddrriizzzzllee..ccoomm
+       WWW: hhttttpp::////wwwwww..ddrriizzzzllee..ccoomm// eellff.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C++ Development Tools    11 October 2001                        4
+
+

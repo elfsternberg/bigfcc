@@ -1,0 +1,6 @@
+Basic Installation
+==================
+
+bigfcc.py is a simple python script.  Just put it somewhere in your path
+and run it.  You may have to modify the first line to point to your
+python executable.

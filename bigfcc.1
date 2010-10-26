@@ -1,0 +1,229 @@
+'\" t
+.\" Manual page created with latex2man on Thu Oct 11 15:40:18 PDT 2001
+.\" NOTE: This file is generated, DO NOT EDIT.
+.de Vb
+.ft CW
+.nf
+..
+.de Ve
+.ft R
+
+.fi
+..
+.TH "FCC" "1" "11 October 2001" "C++ Development Tools "
+.SH NAME
+
+.PP
+fcc
+is a tool to rapidly generate the basic framework of C++ 
+class and components. fcc
+can generate inline files, testing 
+components, and basic copyright notices. 
+.PP
+.SH SYNOPSIS
+
+.PP
+fcc
+\fB\-class \fP\fIlist of class names\fP
+\fB\-author \fP\fIauthor\&'s name\fP
+[\fB\-namespace \fP\fInamespace_name\fP]
+[\fB\-overwrite\fP]
+[\fB\-verbose\fP]
+[\fB\-no_unit_test\fP]
+[\fB\-no_makefile\fP]
+[\fB\-project \fP\fIproject_name\fP]
+[\fB\-sccs_keywords\fP]
+[\fB\-continuus_keywords\fP]
+[\fB\-open_source_notice\fP]
+[\fB\-copyright \fP[\fIcopyright\fP]]
+[\fB\-base_filename \fP\fIbase_filename\fP]
+[\fB\-no_copy_ctor\fP]
+[\fB\-no_assignment_operator\fP]
+[\fB\-no_ctor\fP]
+[\fB\-no_dtor\fP]
+[\fB\-public_copy_ctor\fP]
+[\fB\-public_assignment_operator\fP]
+[\fB\-no_dump_diagnostics\fP]
+[\fB\-no_check_valid\fP]
+[\fB\-no_icc\fP]
+[\fB\-settings_file \fP\fIfilename\fP]
+.PP
+.SH DESCRIPTION
+
+fcc
+takes the name of one or more classes and generates the 
+appropriate code and header files for those classes. By default, it 
+includes a constructor, destructor, private copy constructor, private 
+assignment operator, unit testing, and appropriate inlines. It also 
+generates a raw BSD\-style makefile. 
+.PP
+.SH OPTIONS
+
+.TP
+\fB\-class \fP\fIlist of class names\fP
+ Names of classes to be 
+generated. The files will be named after the first class name on the 
+list. Class names must be separated by whitespace. 
+.PP
+.TP
+\fB\-author \fP\fIauthor\&'s name\fP
+ Your name here. 
+.PP
+.TP
+\fB\-namespace \fP\fInamespace name\fP
+ Wrap the output in a 
+specified namespace. 
+.PP
+.TP
+\fB\-verbose\fP
+ Explain in excruciating detail what the program 
+is doing. 
+.PP
+.TP
+\fB\-no_unit_test\fP
+ Do not generate unit\-testing definitions in 
+the source files. This is an empty method; it\&'s up to the user to 
+define appropriate tests. 
+.PP
+.TP
+\fB\-no_makefile\fP
+ Do not generate a makefile for this code. 
+.PP
+.TP
+\fB\-project \fP\fIproject_name\fP
+ Define a project for this makefile. Right now 
+this option does nothing. 
+.PP
+.TP
+\fB\-sccs_keywords\fP
+ Generate IDs appropriate to SCCS. 
+.PP
+.TP
+\fB\-continuus_keywords\fP
+ Generate keywords for the Continuus 
+Version System. 
+.PP
+.TP
+\fB\-open_source_notice\fP
+ Add some comments about how this code 
+is open source and permission to copy in granted yadda yadda... 
+.PP
+.TP
+\fB\-copyright \fP[\fIcopyright\fP]
+ Adds your copyright notice to the 
+code. 
+.PP
+.TP
+\fB\-base_filename \fP\fIbase_filename\fP
+ Set the name of the 
+files output. Defaults to first class name listed if not set. 
+.PP
+.TP
+\fB\-no_copy_ctor\fP
+ Do not provide a copy constructor in the 
+output code. 
+.PP
+.TP
+\fB\-no_assignment_operator\fP
+ Do not provide an assignment 
+operator in the output code. 
+.PP
+.TP
+\fB\-no_ctor\fP
+ Do not provide a default constructor in the 
+output code. 
+.PP
+.TP
+\fB\-no_dtor\fP
+ Do not provide a destructor in the output code. 
+.PP
+.TP
+\fB\-public_copy_ctor\fP
+ Put the copy constructor in the public 
+section instead of the private section. 
+.PP
+.TP
+\fB\-public_assignment_operator\fP
+ Put the assignment operator in 
+the public section instead of the private section. 
+.PP
+.TP
+\fB\-no_dump_diagnostics\fP
+ Do not provide a debugging method. 
+.PP
+.TP
+\fB\-no_check_valid\fP
+ Do not provide a Programming By Contract 
+style method to check for invariants. 
+.PP
+.TP
+\fB\-no_icc\fP
+ Do not provide a file for class inlines. 
+.PP
+.TP
+\fB\-settings_file \fP\fIfilename\fP
+ Get options from a settings 
+file. Right now this option does nothing. 
+.PP
+.SH REQUIREMENTS
+
+.PP
+.RS
+.TP
+Python 
+fcc
+requires Python version >= 2.0 
+.RE
+.RS
+.PP
+.SH VERSION
+
+Version: 0.8a of May 5, 2001 
+.PP
+.SH LICENSE AND COPYRIGHT
+
+.PP
+.RS
+.RE
+.TP
+Copyright 
+(C)2001, Elf M. Sternberg 
+.br 
+\fBelf@drizzle.com\fP
+.br 
+\fBhttp://www.drizzle.com/ elf\fP
+.RS
+.PP
+.RE
+.TP
+License 
+This program can be redistributed and/or modified under the 
+terms of the GNU Public License. See the file COPYING or visit 
+\fBhttp://www.gnu.org/copyleft/gpl.html\fP
+for terms of use and 
+distribution. 
+.RS
+.PP
+.RE
+.TP
+Misc 
+If you find this software useful, please drop me some email 
+.RS
+.PP
+.RE
+.TP
+Misc 
+This man page was generated using latex2man by Dr. Jurgen 
+Vollmer, and is available from the CTAN archives. 
+.RE
+.RS
+.PP
+.SH AUTHOR
+
+.PP
+Elf M. Sternberg 
+.br 
+Email: \fBelf@drizzle.com\fP
+.br 
+WWW: \fBhttp://www.drizzle.com/ elf\fP\&.
+.\" NOTE: This file is generated, DO NOT EDIT.

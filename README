@@ -1,0 +1,14 @@
+This is a distribution of bigfcc.py, a C++ Class Framework generator
+
+* Licensing
+
+  This program is released under the terms of the GNU General Public
+  License (GNU GPL).  
+
+  You can find a copy of the license in the file COPYING.
+
+* Using:
+
+  Bigfcc comes with a complete list of commands that can be seen by
+  running the command with no arguments.  See the man page that comes
+  with it.
