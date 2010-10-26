@@ -382,31 +382,31 @@ class ImplFileGen( CodeGenerator ):
             " *  File Contents: Implementation of the " + self.commands.baseFilename + " component.\n" + \
             " *  Please see " + self.commands.headerFile + " for full documentation of this system.\n" + \
             " *\n",
-	self.generateDefaultCommentHeader( self.commands.implFile, io_str )
+        self.generateDefaultCommentHeader( self.commands.implFile, io_str )
 
     def genPreface( self ):
         io_str = StringIO()
-	self.generateDefaultPreface( self.commands.implFile, io_str  )
+        self.generateDefaultPreface( self.commands.implFile, io_str  )
         if ( self.commands.useNamespace ):
             print >> self.getStream(), "namespace " + self.commands.namespace + "\n" + \
-    	"{\n" + \
-    	" \n"
+            "{\n" + \
+            " \n"
 
 
     def genCodeBody( self, className ):
         if self.commands.ctor :
-		print >> self.getStream(), \
-		    className + "::" + className + "()\n" + \
+                print >> self.getStream(), \
+                    className + "::" + className + "()\n" + \
                     "{\n" + \
                     "}\n"
 
-	if self.commands.dtor:
-            print >> self.getStream(),	className + "::~" + \
+        if self.commands.dtor:
+            print >> self.getStream(),        className + "::~" + \
                      className + "()\n" + \
             "{\n" + \
             "}\n"
 
-	if self.commands.dumpDiagnostics:
+        if self.commands.dumpDiagnostics:
             print >> self.getStream(), "void\n" + \
                 className + "::DumpDiagnostics() const\n" + \
                 "{\n",
@@ -419,7 +419,7 @@ class ImplFileGen( CodeGenerator ):
 
     def genEpilogue( self ):
         if self.commands.useNamespace:
-		print >> self.getStream(), \
+                print >> self.getStream(), \
                     " \n" + \
                     "} // end of the " + self.commands.namespace + " namespace"
 
@@ -435,13 +435,13 @@ class InlineFileGen( CodeGenerator ):
         return self.writer.getStream()
 
     def genCommentHeader( self ):
-	io_str = StringIO()
-	print >> io_str,  " *\n" + \
+        io_str = StringIO()
+        print >> io_str,  " *\n" + \
             " *  File Contents: Inline definitions for the " + self.commands.baseFilename + \
             " component.\n" + \
             " *  Please see " + self.commands.headerFile + " for full documentation of this class.\n" + \
             " *\n",
-	self.generateDefaultCommentHeader( self.commands.inlineFile, io_str );
+        self.generateDefaultCommentHeader( self.commands.inlineFile, io_str );
 
     def genCodeBody( self, className ):
         if self.commands.checkValid:
@@ -467,19 +467,19 @@ class MakefileGen( CodeGenerator ):
     
 
     def genCommentHeader( self ):
-	print >> self.getStream(), \
-	"#########################################################################\n" + \
+        print >> self.getStream(), \
+        "#########################################################################\n" + \
         "#  " + self.commands.makefile + "\n" + \
         "#  Created by " + self.commands.author + " on " + dateStamp()  + "\n" + \
-	"#\n" + \
-	"#  File Contents: makefile for the " + self.commands.baseFilename + " component.\n" + \
-	"#\n" + \
-	"#########################################################################\n\n"
+        "#\n" + \
+        "#  File Contents: makefile for the " + self.commands.baseFilename + " component.\n" + \
+        "#\n" + \
+        "#########################################################################\n\n"
 
     def genPreface( self ):
-	print >> self.getStream(), "NAME=" + self.commands.baseFilename
+        print >> self.getStream(), "NAME=" + self.commands.baseFilename
 
-	print >> self.getStream(), "INCLUDES=\n" + \
+        print >> self.getStream(), "INCLUDES=\n" + \
             "LIBS=\n" + \
             "CC=gcc\n" + \
             "CXX=g++\n" + \
@@ -495,17 +495,17 @@ class MakefileGen( CodeGenerator ):
             "\t${LINK} ${LINK_FLAGS} -o ut${NAME} ut${NAME}.o ${NAME}.o ${LIBS}\n\n" + \
             "${NAME}.o : ${NAME}.cpp ${NAME}.h",
 
-	if self.commands.iccFile:
+        if self.commands.iccFile:
             print >> self.getStream(), " ${NAME}.icc",
             
-	print >> self.getStream(), "\n" + \
+        print >> self.getStream(), "\n" + \
             "\t${CXX} ${CXX_FLAGS} ${INCLUDES} -c -o ${NAME}.o ${NAME}.cpp\n\n" + \
             "ut${NAME}.o : ut${NAME}.cpp ${NAME}.h",
 
         if self.commands.iccFile:
             print >> self.getStream(), " ${NAME}.icc",
 
-	print >> self.getStream(), "\n" + \
+        print >> self.getStream(), "\n" + \
             "\t${CXX} ${CXX_FLAGS} ${INCLUDES} -c -o ut${NAME}.o ut${NAME}.cpp\n\n" + \
             "clean:\n" + \
             "\trm *.o ut${NAME} html/" "*\n" + \
@@ -523,16 +523,16 @@ class UnitTestFileGen(CodeGenerator):
         
     def genCommentHeader( self ):
         io_str = StringIO()
-	print >> io_str, " *\n" + \
+        print >> io_str, " *\n" + \
             " *  File Contents: Unit test for the the " + self.commands.baseFilename +" component.\n" + \
             " *  Please see " + self.commands.headerFile +" for full documentation of this class.\n" + \
             " *\n"
-	self.generateDefaultCommentHeader( self.commands.unitTestFile, io_str )
+        self.generateDefaultCommentHeader( self.commands.unitTestFile, io_str )
 
     def genPreface( self ):
         io_str = StringIO()
         self.generateDefaultPreface( self.commands.unitTestFile, io_str )
-        print >> self.getStream(),	"int main(int argc, char* argv[])\n" + \
+        print >> self.getStream(),        "int main(int argc, char* argv[])\n" + \
             "{\n"
 
 
@@ -540,7 +540,7 @@ class UnitTestFileGen(CodeGenerator):
         if self.commands.useNamespace:
             print >> self.getStream(), "    " + self.commands.namespace +"::"
 
-	print >>self.getStream(), className +" obj" + className +";\n"
+        print >>self.getStream(), className +" obj" + className +";\n"
 
         if self.commands.dumpDiagnostics:
             print >> self.getStream(), "    obj" + className +".DumpDiagnostics();\n"
@@ -552,7 +552,7 @@ class UnitTestFileGen(CodeGenerator):
             "}\n"
 
     def getStream( self ):
-	return self.writer.getStream()
+        return self.writer.getStream()
 
 
 
@@ -563,28 +563,28 @@ class ClassCreator:
         self.commands = commands
 
     def generateCode( self ):
-	self.generateFile( HeaderFileGen )
-	self.generateFile( ImplFileGen )
+        self.generateFile( HeaderFileGen )
+        self.generateFile( ImplFileGen )
 
         if self.commands.iccFile:
             self.generateFile( InlineFileGen )
 
-	if self.commands.createMakefile:
+        if self.commands.createMakefile:
             self.generateFile( MakefileGen )
 
-	if self.commands.createUnitTestFile:
+        if self.commands.createUnitTestFile:
             self.generateFile( UnitTestFileGen )
 
     def generateFile( self, inclass ):
-	generator = inclass( self.commands )
+        generator = inclass( self.commands )
 
-	generator.genCommentHeader();   # The comment header with author, description, etc.
-	generator.genPreface();         # #ifdef directives, for example.
+        generator.genCommentHeader();   # The comment header with author, description, etc.
+        generator.genPreface();         # #ifdef directives, for example.
 
         for i in self.commands.classNames:
             generator.genCodeBody( i ); # generate each class.
 
-	generator.genEpilogue();
+        generator.genEpilogue();
 
 
 
