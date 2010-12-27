@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 
 from StringIO import StringIO
 import string
@@ -96,7 +96,7 @@ class DigestedCommands:
             j = j + 1
 
         if not ( self.argkeys.has_key( "-class" ) and self.argkeys.has_key( "-author" ) ):
-            raise self.usage
+            raise RuntimeError, self.usage
 
         self.classList = self.getArgument( "-class" )
         self.author = self.getArgument( "-author" )
@@ -175,7 +175,7 @@ class DigestedCommands:
         loc = self.argkeys[ arg ] + 1
         rep = self.arglist[ loc ]
         if string.find( rep, "-" ) == 0:
-            raise self.usage
+            raise RuntimeError, self.usage
         return rep
 
     def getArglist( self, arg ):
@@ -186,7 +186,7 @@ class DigestedCommands:
             rep.append( self.arglist[ loc ] )
             loc = loc + 1
         if ( len( rep ) == 0 ):
-            raise self.usage
+            raise RuntimeError, self.usage
         return rep
 
 
@@ -587,10 +587,10 @@ class ClassCreator:
         generator.genEpilogue();
 
 
-
-commands = DigestedCommands( )
-creator = ClassCreator( commands )
-creator.generateCode()
+if __name__ == '__main__':
+    commands = DigestedCommands( )
+    creator = ClassCreator( commands )
+    creator.generateCode()
 
 
 
