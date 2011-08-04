@@ -1,16 +1,16 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-<!-- Manual page created with latex2man on Thu Oct 11 15:40:11 PDT 2001 --
--- Author of latex2man: Juergen.Vollmer@acm.org --
--- NOTE: This file is generated, DO NOT EDIT. -->
+<!-- Manual page created with latex2man on Thu Aug  4 14:28:15 PDT 2011
+** Author of latex2man: Juergen.Vollmer@informatik-vollmer.de
+** NOTE: This file is generated, DO NOT EDIT. -->
 <html>
-<head><title>FCC</title></head>
-<body bgcolor="white">
+<head><title>FCC</title>
+</head><body bgcolor="white">
 <h1 align=center>
 fcc -<br>
  Fast Class Generator 
 </h1>
 <h4 align=center>Elf M. Sternberg </h4>
-<h4 align=center>11 October 2001</h4>
+<h4 align=center>04 August 2011</h4>
 <h4 align=center>Version 0.8a</h4>
 <p>
 <tt>fcc</tt>
@@ -27,26 +27,26 @@ components, and basic copyright notices.
 <li><a href="#section_4">Requirements </a></li>
 <li><a href="#section_5">Version </a></li>
 <li><a href="#section_6">License and Copyright </a></li>
-<li><a href="#section_7">Author </a>
-</li></ul>
+<li><a href="#section_7">Author </a></li>
+</ul>
 <p>
 <h2><a name="section_1">Synopsis</a></h2>
 
 <p>
 <tt>fcc</tt>
-<b>-class </b><i>list of class names</i>
-<b>-author </b><i>author's name</i>
-[<b>-namespace </b><i>namespace_name</i>]
+<font class="optstyle">-class </font><font class="argstyle">list of class names</font>
+<font class="optstyle">-author </font><font class="argstyle">author's name</font>
+[<font class="optstyle">-namespace </font><font class="argstyle">namespace_name</font>]
 [<b>-overwrite</b>]
 [<b>-verbose</b>]
 [<b>-no_unit_test</b>]
 [<b>-no_makefile</b>]
-[<b>-project </b><i>project_name</i>]
+[<font class="optstyle">-project </font><font class="argstyle">project_name</font>]
 [<b>-sccs_keywords</b>]
 [<b>-continuus_keywords</b>]
 [<b>-open_source_notice</b>]
-[<b>-copyright </b>[<i>copyright</i>]]
-[<b>-base_filename </b><i>base_filename</i>]
+[<font class="optstyle">-copyright </font>[<font class="argstyle">copyright</font>]]
+[<font class="optstyle">-base_filename </font><font class="argstyle">base_filename</font>]
 [<b>-no_copy_ctor</b>]
 [<b>-no_assignment_operator</b>]
 [<b>-no_ctor</b>]
@@ -56,7 +56,7 @@ components, and basic copyright notices.
 [<b>-no_dump_diagnostics</b>]
 [<b>-no_check_valid</b>]
 [<b>-no_icc</b>]
-[<b>-settings_file </b><i>filename</i>]
+[<font class="optstyle">-settings_file </font><font class="argstyle">filename</font>]
 <p>
 <h2><a name="section_2">Description</a></h2>
 
@@ -70,108 +70,130 @@ generates a raw BSD-style makefile.
 <h2><a name="section_3">Options</a></h2>
 
 <dl compact>
-<dt><b>-class </b><i>list of class names</i>
+<dt><font class="optstyle">-class </font><font class="argstyle">list of class names</font>
+</dt>
 <dd> Names of classes to be 
 generated. The files will be named after the first class name on the 
 list. Class names must be separated by whitespace. 
 <p>
 </dd>
-<dt><b>-author </b><i>author's name</i>
+<dt><font class="optstyle">-author </font><font class="argstyle">author's name</font>
+</dt>
 <dd> Your name here. 
 <p>
 </dd>
-<dt><b>-namespace </b><i>namespace name</i>
+<dt><font class="optstyle">-namespace </font><font class="argstyle">namespace name</font>
+</dt>
 <dd> Wrap the output in a 
 specified namespace. 
 <p>
 </dd>
 <dt><b>-verbose</b>
+</dt>
 <dd> Explain in excruciating detail what the program 
 is doing. 
 <p>
 </dd>
 <dt><b>-no_unit_test</b>
+</dt>
 <dd> Do not generate unit-testing definitions in 
 the source files. This is an empty method; it's up to the user to 
 define appropriate tests. 
 <p>
 </dd>
 <dt><b>-no_makefile</b>
+</dt>
 <dd> Do not generate a makefile for this code. 
 <p>
 </dd>
-<dt><b>-project </b><i>project_name</i>
+<dt><font class="optstyle">-project </font><font class="argstyle">project_name</font>
+</dt>
 <dd> Define a project for this makefile. Right now 
 this option does nothing. 
 <p>
 </dd>
 <dt><b>-sccs_keywords</b>
+</dt>
 <dd> Generate IDs appropriate to SCCS. 
 <p>
 </dd>
 <dt><b>-continuus_keywords</b>
+</dt>
 <dd> Generate keywords for the Continuus 
 Version System. 
 <p>
 </dd>
 <dt><b>-open_source_notice</b>
+</dt>
 <dd> Add some comments about how this code 
 is open source and permission to copy in granted yadda yadda... 
 <p>
 </dd>
-<dt><b>-copyright </b>[<i>copyright</i>]
+<dt><font class="optstyle">-copyright </font>[<font class="argstyle">copyright</font>]
+</dt>
 <dd> Adds your copyright notice to the 
 code. 
 <p>
 </dd>
-<dt><b>-base_filename </b><i>base_filename</i>
+<dt><font class="optstyle">-base_filename </font><font class="argstyle">base_filename</font>
+</dt>
 <dd> Set the name of the 
 files output. Defaults to first class name listed if not set. 
 <p>
 </dd>
 <dt><b>-no_copy_ctor</b>
+</dt>
 <dd> Do not provide a copy constructor in the 
 output code. 
 <p>
 </dd>
 <dt><b>-no_assignment_operator</b>
+</dt>
 <dd> Do not provide an assignment 
 operator in the output code. 
 <p>
 </dd>
 <dt><b>-no_ctor</b>
+</dt>
 <dd> Do not provide a default constructor in the 
 output code. 
 <p>
 </dd>
 <dt><b>-no_dtor</b>
+</dt>
 <dd> Do not provide a destructor in the output code. 
 <p>
 </dd>
 <dt><b>-public_copy_ctor</b>
+</dt>
 <dd> Put the copy constructor in the public 
 section instead of the private section. 
 <p>
 </dd>
 <dt><b>-public_assignment_operator</b>
+</dt>
 <dd> Put the assignment operator in 
 the public section instead of the private section. 
 <p>
 </dd>
 <dt><b>-no_dump_diagnostics</b>
+</dt>
 <dd> Do not provide a debugging method. 
 <p>
 </dd>
 <dt><b>-no_check_valid</b>
+</dt>
 <dd> Do not provide a Programming By Contract 
 style method to check for invariants. 
 <p>
 </dd>
 <dt><b>-no_icc</b>
+</dt>
 <dd> Do not provide a file for class inlines. 
 <p>
 </dd>
-<dt><b>-settings_file </b><i>filename</i>
+<dt><font class="optstyle">-settings_file </font><font class="argstyle">filename</font>
+</dt>
 <dd> Get options from a settings 
 file. Right now this option does nothing. 
 <p>
@@ -179,7 +201,7 @@ file. Right now this option does nothing.
 
 <p>
 <dl compact>
-<dt>Python
+<dt>Python</dt>
 <dd> <tt>fcc</tt>
 requires Python version &gt;= 2.0 
 </dd>
@@ -193,15 +215,15 @@ Version: 0.8a of May 5, 2001
 
 <p>
 <dl compact>
-<dt>Copyright
+<dt>Copyright</dt>
 <dd> &copy; 2001, Elf M. Sternberg <br>
- 
-<a href ="mailto:elf@drizzle.com"><tt>elf@drizzle.com</tt></a>
-<br> 
-<a href ="http://www.drizzle.com/&nbsp;elf"><tt>http://www.drizzle.com/&nbsp;elf</tt></a>
+
+<a href ="mailto:elf.sternberg@gmail.com"><tt>elf.sternberg@gmail.com</tt></a>
+<br>
+<a href ="http://elfsternberg.com"><tt>http://elfsternberg.com</tt></a>
 <p>
 </dd>
-<dt>License
+<dt>License</dt>
 <dd> This program can be redistributed and/or modified under the 
 terms of the GNU Public License. See the file COPYING or visit 
 <a href ="http://www.gnu.org/copyleft/gpl.html"><tt>http://www.gnu.org/copyleft/gpl.html</tt></a>
@@ -209,11 +231,11 @@ for terms of use and
 distribution. 
 <p>
 </dd>
-<dt>Misc
+<dt>Misc</dt>
 <dd> If you find this software useful, please drop me some email 
 <p>
 </dd>
-<dt>Misc
+<dt>Misc</dt>
 <dd> This man page was generated using latex2man by Dr. Jurgen 
 Vollmer, and is available from the CTAN archives. 
 </dd>
@@ -223,10 +245,10 @@ Vollmer, and is available from the CTAN archives.
 
 <p>
 Elf M. Sternberg <br>
- 
-Email: <a href ="mailto:elf@drizzle.com"><tt>elf@drizzle.com</tt></a>
-<br> 
-WWW: <a href ="http://www.drizzle.com/&nbsp;elf"><tt>http://www.drizzle.com/&nbsp;elf</tt></a>.
+
+Email: <a href ="mailto:elf.sternberg@gmail.com"><tt>elf.sternberg@gmail.com</tt></a>
+<br>
+WWW: <a href ="http://elfsternberg.com"><tt>http://elfsternberg.com</tt></a>.
 </body>
 </html>
 <!-- NOTE: This file is generated, DO NOT EDIT. -->
