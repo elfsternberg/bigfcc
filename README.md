@@ -4,6 +4,14 @@ Fcc is a tool to rapidly generate the basic framework of C++ class and
 components. fcc can generate inline files, testing components, and basic
 copyright notices
 
+## Status
+
+**August 4, 2011**: This project is **conditionally completed**.  No new
+features are being considered.  If I'm called upon to code more C++ in
+the future, I may amend it to generate
+[Rule of 5](https://en.wikipedia.org/wiki/Rule_of_three_(C%2B%2B_programming)
+compliant code.  Someday.
+
 ## Licensing
 
 This program is released under the terms of the GNU General Public
