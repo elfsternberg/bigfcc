@@ -9,8 +9,8 @@ copyright notices
 **August 4, 2011**: This project is **conditionally completed**.  No new
 features are being considered.  If I'm called upon to code more C++ in
 the future, I may amend it to generate
-[Rule of 5](https://en.wikipedia.org/wiki/Rule_of_three_(C%2B%2B_programming)
-compliant code.  Someday.
+[Rule of 5](https://en.wikipedia.org/wiki/Rule_of_three_(C%2B%2B_programming))
+compliant code.  Someday.  Maybe.
 
 ## Licensing
 
